@@ -155,7 +155,6 @@ body {
         input, select {
           font-family: 'Catamaran';
           width: 100%;
-          padding: 6px 0px;
           box-sizing: border-box;
           background-color: transparent;
           border: none;
@@ -196,6 +195,7 @@ body {
         }
         .ccv {
           display: inline-block;
+          vertical-align: top;
           width: 27%;
           input {
             max-width: 100%;

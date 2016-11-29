@@ -2,6 +2,10 @@
   "name": "dribbbling-code",
   "version": "1.0.0",
   "description": "dribbble reproductions",
+  "scripts": {
+    "compile": "NODE_PATH=. node scripts/compile",
+    "start": "node_modules/.bin/http-server -s -c-1 build"
+  },
   "author": "dayne m kilheffer",
   "license": "ISC"
 }
