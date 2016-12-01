@@ -21,8 +21,12 @@ const outputCssPath = path.resolve(subprojectBuildPath, 'index.css');
 sass.render({
     file: inputScssPath,
     outFile: outputCssPath,
+    sourceMap: true,
   }, function(error, result) {
     if(!error){
       fs.writeFileSync(outputCssPath, result.css);
-    }
+      fs.writeFileSync(outputCssPath + '.map', result.map);
+  } else {
+      console.log(error);
+  }
   });
