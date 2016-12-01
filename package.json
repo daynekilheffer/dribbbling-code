@@ -7,5 +7,12 @@
     "start": "node_modules/.bin/http-server -s -c-1 build"
   },
   "author": "dayne m kilheffer",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "0.9.0",
+    "mkdirp": "0.5.1",
+    "node-sass": "3.13.0",
+    "pug": "2.0.0-beta6",
+    "watchman": "0.1.8"
+  }
 }
