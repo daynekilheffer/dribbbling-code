@@ -1,0 +1,38 @@
+body {
+    background-color: #f1efee;
+}
+.card {
+
+    display: inline-block;
+    vertical-align: top;
+
+    width: 260px;
+    height: 400px;
+
+    margin: 20px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 24px rgba(0,0,0,0.075);
+
+    @import './skyline';
+    @import './buildings';
+
+    &.san-fran {
+        background-color: #fef5d2;
+    }
+
+    &.new-york {
+        background-color: #eff3f9;
+
+        .sun {
+            margin-left: 46px;
+            transform-origin: top right;
+            transform: scale(0.8, 0.8);
+        }
+        .cloud.over-sun {
+            top: 75px;
+            left: 20px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.skyline {
+    position: relative;
+}
+
+.sun {
+    $size: 50px;
+    $color: #fce375;
+
+    position: relative;
+    display: inline-block;
+
+    background-color: $color;
+    width: $size;
+    height: $size;
+
+    margin: 40px;
+    border-radius: $size;
+
+    &.shine:before {
+        position: absolute;
+        content: ' ';
+        display: block;
+
+        width: $size - 12px;
+        height: $size - 12px;
+        border: 2px solid transparent;
+        border-left-color: #fef5d2;
+        border-radius: $size;
+        margin: 4px;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        $exterior-size: 18px;
+        position: absolute;
+        content: ' ';
+        display: block;
+        top: -$exterior-size;
+        bottom: -$exterior-size;
+        left: -$exterior-size;
+        right: -$exterior-size;
+
+        border-radius: $size;
+        background-color: $color;
+        opacity: 0.15;
+    }
+}
+
+.cloud {
+    position: absolute;
+    background-color: white;
+
+    @mixin cloud-sizer($cloud-size) {
+        $small-cloud-size: $cloud-size * 0.66;
+        width: $cloud-size * 0.65;
+        height: 20px;
+        margin: 0 $small-cloud-size/2 0 $cloud-size/2;
+        &:before, &:after {
+            position: absolute;
+            content: ' ';
+            display: block;
+            background-color: white;
+            bottom: 0;
+        }
+        &:before {
+            $size: $cloud-size;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            left: -$size/2;
+        }
+        &:after {
+            $size: $small-cloud-size;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            right: -$size/2;
+        }
+    }
+    @include cloud-sizer(60px);
+    &.small {
+        top: 60px;
+        right: 20px;
+        left: auto;
+        transform: scale(0.66, 0.66) rotateY(180deg);
+    }
+}
