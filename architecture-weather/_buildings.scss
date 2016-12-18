@@ -2,41 +2,41 @@
     &.bridge {
         $primary-color: #de6825;
         position: relative;
-        //-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,1)));
+        overflow-x: hidden;
+        -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,0.6)), to(black));
         .suspension {
             position: absolute;
+            overflow: hidden;
             top: 0;
-            & {
-                overflow: hidden;
-                min-height: 280px;
-                width: 60%;
-                > * {
-                    position: absolute;
-                    border: 3px solid $primary-color;
-                    width: 280px;
-                    height: 280px;
-                    border-radius: 300px;
-                    left: -170px;
-                    top: -140px;
+            margin-top: 13px;
+            min-height: 280px;
+            width: 60%;
+            > * {
+                position: absolute;
+                border: 3px solid $primary-color;
+                width: 280px;
+                height: 280px;
+                border-radius: 300px;
+                left: -171px;
+                top: -140px;
 
-                    &:before {
-                        position: absolute;
-                        content: ' ';
-                        display: inline-block;
-                        border-radius: 200px;
-                        border: 2px solid #fef5d2;
-                        top: 0px;
-                        left: 0px;
-                        bottom: 0px;
-                        right: 0px;
-                    }
+                &:before {
+                    position: absolute;
+                    content: ' ';
+                    display: inline-block;
+                    border-radius: 200px;
+                    border: 2px solid #fef5d2;
+                    top: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    right: 0px;
                 }
-                .right {
-                    $size-offset: 70px;
-                    width: 280px + $size-offset;
-                    height: 280px + $size-offset;
-                    transform: translate(-($size-offset/2), -($size-offset/2));
-                }
+            }
+            .right {
+                $size-offset: 70px;
+                width: 280px + $size-offset;
+                height: 280px + $size-offset;
+                transform: translate(-($size-offset/2), -($size-offset/2));
             }
             &.back {
                 transform: rotateY(180deg) translateX(-160px);
@@ -87,31 +87,97 @@
                     background-color: #e79657;
                 }
             }
-            .left:before, .right:before {
-                position: absolute;
-                content: ' ';
-                display: inline-block;
-                top: -5px;
-                width: 6px;
-                background-color: $primary-color;
-                height: 4px;
-                transform: translateX(2px);
-            }
-            .left:after, .right:after {
-                position: absolute;
-                content: ' ';
-                display: inline-block;
-                top: -11px;
-                width: 2px;
-                background-color: $primary-color;
-                height: 5px;
-                margin: 0 4px;
+            .point {
+                width: 10px;
+                &:after {
+                    content: ' ';
+                    display: block;
+                    width: 6px;
+                    background-color: $primary-color;
+                    height: 4px;
+                    transform: translateX(2px);
+                    margin-bottom: 2px;
+                }
+
+                &:before {
+                    content: ' ';
+                    display: block;
+                    width: 2px;
+                    background-color: $primary-color;
+                    height: 5px;
+                    margin: 0 4px;
+                    margin-bottom: 2px;
+                }
             }
             .left {
                 transform: rotateY(180deg);
             }
             .right {
-                margin-left: 22px;
+                margin-left: 21px;
+            }
+            .connector {
+                $starting-y-loc: 13px;
+                box-sizing: border-box;
+                position: absolute;
+                top: $starting-y-loc;
+                left: (5px+8px);
+                right: (5px+8px);
+                //height: 15px;
+                border: 4px solid $primary-color;
+                border-left: none;
+                border-right: none;
+                background-color: #ecac77;
+
+                padding: 1px;
+
+                .grid-lines {
+                    $gradient-primary-color: lighten($primary-color, 10);
+                    background: repeating-linear-gradient(90deg, #ecac77, #ecac77 3px, $gradient-primary-color 3px, $gradient-primary-color 4px);
+                    height: 6px;
+                    content: ' ';
+                }
+                &.two {
+                    top: $starting-y-loc + 24px + 5px;
+                }
+                &.three {
+                    top: $starting-y-loc + (24px + 5px) * 2;
+                }
+                &.four {
+                    top: $starting-y-loc + (24px + 5px) * 3 + 8px;
+                }
+            }
+        }
+        .fog {
+            position: relative;
+            overflow: hidden;
+            margin-top: -55px;
+            height: 55px;
+            .layer {
+                position: absolute;
+                border-radius: 500px;
+                width: 300px;
+                height: 300px;
+                background-color: white;
+                opacity: 0.6;
+                transform-origin: top center;
+
+                &:nth-child(1) {
+                    transform: translate(-150px, 0) scaleY(0.4);
+                }
+                &:nth-child(2) {
+                    transform: translate(-110px, 18px) scaleY(0.6);
+                    opacity: 0.8;
+                }
+                &:nth-child(3) {
+                    transform: translate(-40px, 12px) scaleY(0.4);
+                }
+                &:nth-child(4) {
+                    transform: translate(70px, 0) scaleY(0.4);
+                }
+                &:nth-child(5) {
+                    transform: translate(100px, 10px) scaleY(0.4);
+                    opacity: 0.9;
+                }
             }
         }
     }
