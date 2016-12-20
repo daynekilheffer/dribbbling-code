@@ -190,19 +190,19 @@
                 }
             }
             &.flat-1 {
-                width: 30px;
-                height: 4px;
+                width: 24px;
+                height: 5px;
                 border: 3px solid $primary-color;
                 border-bottom: none;
 
                 .grid-lines {
-                    margin: 2px auto 0;
+                    margin: 3px auto 0;
                     height: 2px;
                     background-color: $grid-line-color;
                 }
             }
             &.flat-2 {
-                width: 42px;
+                width: 35px;
                 height: 4px;
                 border: 3px solid $primary-color;
                 border-bottom: none;
@@ -211,11 +211,14 @@
                     width: 21px;
                     margin: 2px auto 0;
                     height: 2px;
-                    background: repeating-linear-gradient(90deg, transparent, transparent 3px, $grid-line-color 3px, $grid-line-color 6px);
+                    background: repeating-linear-gradient(90deg, gradient-lines(
+                        (transparent 3px),
+                        ($grid-line-color 3px)
+                    ));
                 }
             }
             &.main {
-                width: 51px;
+                width: 39px;
                 height: 110px;
                 border: 3px solid $primary-color;
                 border-bottom: none;
@@ -224,6 +227,10 @@
                     margin-top: 4px;
                     height: 100%;
                     background: repeating-linear-gradient(90deg, transparent, transparent 3px, $grid-line-color 3px, $grid-line-color 6px);
+                    background: repeating-linear-gradient(90deg, gradient-lines(
+                        (transparent 3px),
+                        ($grid-line-color 3px)
+                    ));
                 }
             }
         }
@@ -284,7 +291,7 @@
                 }
             }
 
-            $distance-offset-edge: 91px;
+            $distance-offset-edge: 97px;
 
             &.left {
                 left: $distance-offset-edge;
