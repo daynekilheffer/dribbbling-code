@@ -1,9 +1,11 @@
+
+$san-fran-color: #de6825;
+$new-york-color: #908579;
 .forecast {
-    $primary-color: #de6825;
     text-align: center;
-    color: $primary-color;
     position: relative;
     z-index: 20;
+
     .city {
         text-transform: uppercase;
         font-size: 12px;
@@ -38,11 +40,11 @@
             font-size: 11px;
         }
         .minus-1, .plus-1 {
-            font-size: 20px;
+            font-size: 22px;
         }
         .now {
             position: relative;
-            font-size: 32px;
+            font-size: 36px;
             &:after {
                 position: absolute;
                 content: ' ';
@@ -50,9 +52,27 @@
                 top: -3px;
                 height: 6px;
                 width: 6px;
-                border: 2px solid $primary-color;
+                border: 2px solid transparent;
                 border-radius: 6px;
             }
+        }
+    }
+}
+
+
+&.san-fran .forecast {
+    color: $san-fran-color;
+    .five-day {
+        .now:after {
+            border-color: $san-fran-color;
+        }
+    }
+}
+&.new-york .forecast {
+    color: $new-york-color;
+    .five-day {
+        .now:after {
+            border-color: $new-york-color;
         }
     }
 }
