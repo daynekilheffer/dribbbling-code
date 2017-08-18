@@ -1,0 +1,177 @@
+body {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  font-family: sans-serif;
+  $height: 520px;
+  position: relative;
+  width: 800px;
+  height: $height;
+  background-color: white;
+  overflow: hidden;
+
+  .background-circle-slice {
+    $size: 1500px;
+    background: #0069cd;
+    position: absolute;
+    top: $height/2 - ($size * .5);
+    right: - ($size * .87);
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+  }
+
+  .receipt {
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 28px 80px rgba(black, 0.3);
+
+    .details {
+      display: inline-block;
+      background: #007ef1;
+      color: white;
+      padding: 25px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+  }
+
+  .details {
+    display: inline-block;
+    letter-spacing: 2px;
+
+    .section {
+      display: flex;
+      padding: 18px 24px 18px 4px;
+      border-bottom: 1px solid #2f90f4;
+      font-size: 12px;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .icon {
+        margin-right: 16px;
+        svg {
+          $size: 16px;
+          fill: white;
+          width: $size;
+          height: $size;
+        }
+      }
+
+      .label {
+        margin-bottom: 10px;
+      }
+      .value {
+        font-weight: bold;
+      }
+    }
+    .header {
+      display: block;
+      padding-top: 8px;
+      .label {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .recipient {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .payment-method {
+    $border-color: #d5e1e6;
+    flex-grow: 1;
+    padding: 20px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      padding: 26px 12px 16px;
+
+      border-bottom: 1px solid $border-color;
+      .date {
+        text-align: right;
+        align-self: center;
+        color: #999;
+        font-size: 12px;
+
+        .mon-day-year, .time, small {
+          margin: 0 4px;
+        }
+        small {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .indent {
+      padding-left: 10px;
+    }
+
+    .purchase .description {
+      color: #58636a;
+      font-size: 14.5px;
+      font-weight: 700;
+      padding: 36px 0 14px;
+    }
+
+    .amount {
+      display: flex;
+      align-items: center;
+
+      font-size: 11px;
+      color: #999;
+      .total {
+        margin-right: 6px;
+      }
+    }
+    .dash {
+      height: 1px;
+      width: 100px;
+      background-color: #d5e1e6;
+      margin-right: 16px;
+    }
+
+    .thank-you {
+      color: #999;
+      font-size: 14px;
+      margin-top: 30px;
+      p {
+        margin: 8px 0;
+        line-height: 1.4em;
+      }
+    }
+    .disclaimer {
+      color: #aaa;
+      font-size: 10px;
+      line-height: 1.4em;
+      padding: 18px 0 16px 0;
+    }
+
+    .footer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid #d5e1e6;
+      padding: 16px 10px 0 0;
+      .website {
+        font-size: 10px;
+        color: #007bef;
+      }
+      .invoice {
+        color: #777;
+        font-size: 10px;
+      }
+    }
+  }
+}

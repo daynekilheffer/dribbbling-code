@@ -1,0 +1,70 @@
+doctype html
+head
+  link(rel="stylesheet", href="index.css")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Droid+Sans:300,400,700")
+body
+  include symbol-defs.svg
+.container
+  .background-circle-slice
+  .receipt
+    .details
+      .section.header
+        .label Receipt for
+        .recipient Dribbble
+      .section.amount
+        .icon
+          svg
+            use(xlink:href="#icon-wallet")
+        .content
+          .label Amount:
+          .value $20.00 USD
+      .section.date
+        .icon
+          svg
+            use(xlink:href="#icon-calendar")
+        .content
+          .label Date:
+          .value Nov 5
+      .section.issuer
+        .icon
+          svg
+            use(xlink:href="#icon-star-empty")
+        .content
+          .label Issuer:
+          .value Dribbble
+      .section.confirmationv
+        .icon
+          svg
+            use(xlink:href="#icon-receipt")
+        .content
+          .label Confirmation Nr:
+          .value 0YX123580219G
+    .payment-method
+      .header
+        .logo
+          <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal Logo">
+        .date
+          span.mon-day-year Oct 18, 2015
+          span.time 08:30:57
+          small pdt
+      .indent
+        .purchase
+          .description Dribbble Pro Account (1 year)
+        .amount
+          .dash
+          .total Total:
+          .value $20.00 USD
+        .thank-you
+          p.salutation Hello Ennio,
+          p.action
+            | You sent a payment of <strong>$20.00 USD</strong>
+            <br>
+            | to Dribbble. (<a>paypal@dribbble.com</a>)
+        .disclaimer
+            | It may take a few moments for this
+            <br>
+            | transaction to appear in your account.
+      .footer
+        .website www.paypal.com/help
+        .invoice Invoice ID: 108165
