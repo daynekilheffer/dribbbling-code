@@ -1,4 +1,5 @@
 const fs = require('fs');
+const glob = require('glob');
 const mkdirp = require('mkdirp');
 const path = require('path');
 const pug = require('pug');
@@ -30,3 +31,10 @@ sass.render({
       console.log(error);
   }
   });
+
+const globbedImagesPath = path.resolve(subprojectPath, '*.jpg');
+glob(globbedImagesPath, {}, (err, files) => {
+  files.forEach(file => {
+    fs.copyFileSync(file, path.resolve(subprojectBuildPath, path.basename(file)));
+  })
+});

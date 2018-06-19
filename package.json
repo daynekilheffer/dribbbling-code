@@ -15,5 +15,8 @@
     "pug": "2.0.0-beta6",
     "watchman": "0.1.8",
     "lr-http-server": "^0.1.5"
+  },
+  "dependencies": {
+    "glob": "^7.1.2"
   }
 }
